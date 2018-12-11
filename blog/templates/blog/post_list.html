@@ -1,20 +1,20 @@
+
+
 <html>
     <header>
         <title>Apanda's Space</title>
     </header>
     <body>
         <div>
-            <h1>
-                <a href="/">Apanda's Space</a>
-            </h1>
+            <h1><a href="/">Apanda's Space</a></h1>
         </div>
-
-        <div>
-            <h1>This is a post.</h1>
-        </div>
-        <div>
-            <p>This is the body of the post.</p>
-            <p>This is the time/date stamp.</p>
-        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
